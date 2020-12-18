@@ -1,0 +1,50 @@
+@import "global";
+@import "app";
+@import "variables";
+@import "scroll";
+@import "components/index";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  height: 100%;
+}
+
+.ant-layout {
+  height: 100%;
+  .logo {
+    height: 32px;
+    background: #ffffff;
+    border-radius: 6px;
+    margin: 16px;
+  }
+  .ant-layout-sider-collapsed {
+    .anticon {
+      font-size: 16px;
+    }
+    .nav-text {
+      display: none;
+    }
+    .ant-menu-submenu-vertical > .ant-menu-submenu-title:after {
+      display: none;
+    }
+    .ant-menu-dark:not(.ant-menu-inline) .ant-menu-submenu-open {
+      color: inherit;
+    }
+  }
+  p {
+    margin: 10px 0 10px 0;
+  }
+}
