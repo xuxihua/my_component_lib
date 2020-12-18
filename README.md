@@ -1,2 +1,3 @@
-# xixi_customize_admin
-嘻嘻订制管理端
+# my_component_lib
+个人组件库
+技术栈采用：react+ts+redux+antd+echarts
