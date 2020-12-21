@@ -3,11 +3,15 @@
  * @Author: xxh
  * @Date: 2020-11-16 10:22:53
  * @LastEditors: xxh
- * @LastEditTime: 2020-11-16 10:44:03
+ * @LastEditTime: 2020-12-21 15:01:01
  */
 
 export interface HomeStoreState {
-  name: String,
-  sex: String,
-  phoneNo: String,
+  name: string,
+  sex: string,
+  phoneNo: string,
+}
+
+export interface MenuStoreState {
+  menuKey: string,
 }

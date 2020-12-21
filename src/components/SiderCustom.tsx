@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { is, fromJS } from "immutable";
 import API from "../api/api";
 import { Layout } from "antd";
-import SiderMenu from "./SiderMenu";
+// import SiderMenu from "./SiderMenu";
+import SiderMenu from "../containers/components/siderMenu";
 import { Scrollbars } from "react-custom-scrollbars";
 const { Sider } = Layout;
 
@@ -34,7 +35,7 @@ export default class SiderCustom extends Component<IProps, IState> {
       >
         <div className="logo"></div>
         <Scrollbars>
-          <SiderMenu></SiderMenu>
+          <SiderMenu menuData={{menuKey: ''}}></SiderMenu>
         </Scrollbars>
       </Sider>
     );

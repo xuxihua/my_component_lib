@@ -3,7 +3,7 @@
  * @Author: xxh
  * @Date: 2020-11-17 19:02:29
  * @LastEditors: xxh
- * @LastEditTime: 2020-12-18 09:59:57
+ * @LastEditTime: 2020-12-21 16:33:40
  */
 import React from "react";
 import {
@@ -13,7 +13,8 @@ import {
   ApartmentOutlined,
   PropertySafetyOutlined,
 } from "@ant-design/icons";
-import Com from "../components";
+import MyCom from "../components";
+import MyPage from "../pages";
 
 export interface ISiderMenuBase {
   key: string;
@@ -22,6 +23,7 @@ export interface ISiderMenuBase {
   icon?: any;
   component?: any;
   route?: string;
+  subs?: any;
 }
 
 export interface ISiderMenu extends ISiderMenuBase {
@@ -39,74 +41,120 @@ export const menu: {
       path: "/app",
       title: "首页",
       icon: <HomeOutlined />,
-      component: Com.HomeStatistics,
+      component: MyCom.HomeStatistics,
     },
     {
-      key: "/app/user",
-      path: "/app/user",
-      title: "客户管理",
+      key: "/app/echarts",
+      path: "/app/echarts",
+      title: "图表管理",
       icon: <UserOutlined />,
       subs: [
         {
-          key: "/app/user/option1",
-          path: "/app/user/option1",
-          title: "客户列表",
-          component: Com.HomeStatistics,
+          key: "/app/echarts/bar",
+          path: "/app/echarts/bar",
+          title: "柱状图",
+          subs: [
+            {
+              key: "/app/echarts/bar/3Dbar",
+              path: "/app/echarts/bar/3Dbar",
+              title: "3D柱状图",
+              component: MyPage.Bar3DPage,
+            },
+          ]
         },
       ],
     },
     {
-      key: "/app/template",
-      path: "/app/template",
-      title: "模板管理",
+      key: "/app/component",
+      path: "/app/component",
+      title: "组件管理",
       icon: <SkinOutlined />,
       subs: [
         {
-          key: "/app/template/option1",
-          path: "/app/template/option1",
-          title: "模板设计",
-          component: Com.HomeStatistics,
+          key: "/app/component/showData",
+          path: "/app/component/showData",
+          title: "数据展示",
+          subs: [
+            {
+              key: "/app/component/showData/carousel",
+              path: "/app/component/showData/carousel",
+              title: "走马灯",
+              component: MyCom.CarouselWithTab,
+            },
+            {
+              key: "/app/component/showData/tabs",
+              path: "/app/component/showData/tabs",
+              title: "标签页",
+              component: MyPage.TabsPage,
+            },
+          ]
         },
-        {
-          key: "/app/template/option2",
-          path: "/app/template/option2",
-          title: "素材管理",
-          component: Com.UserOption1,
-        },
-        {
-          key: "/app/template/option3",
-          path: "/app/template/option3",
-          title: "模板列表",
-          component: Com.UserOption1,
-        },
+        // {
+        //   key: "/app/component/option2",
+        //   path: "/app/component/option2",
+        //   title: "素材管理",
+        //   component: MyCom.UserOption1,
+        // },
+        // {
+        //   key: "/app/component/option3",
+        //   path: "/app/component/option3",
+        //   title: "模板列表",
+        //   component: MyCom.UserOption1,
+        // },
       ],
     },
-    {
-      key: "/app/finance",
-      path: "/app/finance",
-      title: "财务管理",
-      icon: <PropertySafetyOutlined />,
-      subs: [
-        {
-          key: "/app/finance/option1",
-          path: "/app/finance/option1",
-          title: "打赏管理",
-          component: Com.HomeStatistics,
-        },
-        {
-          key: "/app/finance/option2",
-          path: "/app/finance/option2",
-          title: "账目明细",
-          component: Com.UserOption1,
-        },
-        {
-          key: "/app/finance/option3",
-          path: "/app/finance/option3",
-          title: "流水报表",
-          component: Com.UserOption1,
-        },
-      ],
-    },
+    // {
+    //   key: "/app/template",
+    //   path: "/app/template",
+    //   title: "模板管理",
+    //   icon: <SkinOutlined />,
+    //   subs: [
+    //     {
+    //       key: "/app/template/option1",
+    //       path: "/app/template/option1",
+    //       title: "模板设计",
+    //       component: MyCom.HomeStatistics,
+    //     },
+    //     {
+    //       key: "/app/template/option2",
+    //       path: "/app/template/option2",
+    //       title: "素材管理",
+    //       component: MyCom.UserOption1,
+    //     },
+    //     {
+    //       key: "/app/template/option3",
+    //       path: "/app/template/option3",
+    //       title: "模板列表",
+    //       component: MyCom.UserOption1,
+    //     },
+    //   ],
+    // },
+    // {
+    //   key: "/app/finance",
+    //   path: "/app/finance",
+    //   title: "财务管理",
+    //   icon: <PropertySafetyOutlined />,
+    //   subs: [
+    //     {
+    //       key: "/app/finance/option1",
+    //       path: "/app/finance/option1",
+    //       title: "打赏管理",
+    //       component: MyCom.HomeStatistics,
+    //     },
+    //     {
+    //       key: "/app/finance/option2",
+    //       path: "/app/finance/option2",
+    //       title: "账目明细",
+    //       component: MyCom.UserOption1,
+    //     },
+    //     {
+    //       key: "/app/finance/option3",
+    //       path: "/app/finance/option3",
+    //       title: "流水报表",
+    //       component: MyCom.UserOption1,
+    //     },
+    //   ],
+    // },
     {
       key: "/app/jurisdiction",
       path: "/app/jurisdiction",
@@ -117,13 +165,13 @@ export const menu: {
           key: "/app/jurisdiction/option1",
           path: "/app/jurisdiction/option1",
           title: "账号管理",
-          component: Com.HomeStatistics,
+          component: MyCom.HomeStatistics,
         },
         {
           key: "/app/jurisdiction/option2",
           path: "/app/jurisdiction/option2",
           title: "角色管理",
-          component: Com.UserOption1,
+          component: MyCom.UserOption1,
         },
       ],
     },
