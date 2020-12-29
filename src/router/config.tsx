@@ -3,7 +3,7 @@
  * @Author: xxh
  * @Date: 2020-11-17 19:02:29
  * @LastEditors: xxh
- * @LastEditTime: 2020-12-21 16:33:40
+ * @LastEditTime: 2020-12-29 14:29:30
  */
 import React from "react";
 import {
@@ -12,6 +12,7 @@ import {
   SkinOutlined,
   ApartmentOutlined,
   PropertySafetyOutlined,
+  VideoCameraOutlined
 } from "@ant-design/icons";
 import MyCom from "../components";
 import MyPage from "../pages";
@@ -103,32 +104,20 @@ export const menu: {
         // },
       ],
     },
-    // {
-    //   key: "/app/template",
-    //   path: "/app/template",
-    //   title: "模板管理",
-    //   icon: <SkinOutlined />,
-    //   subs: [
-    //     {
-    //       key: "/app/template/option1",
-    //       path: "/app/template/option1",
-    //       title: "模板设计",
-    //       component: MyCom.HomeStatistics,
-    //     },
-    //     {
-    //       key: "/app/template/option2",
-    //       path: "/app/template/option2",
-    //       title: "素材管理",
-    //       component: MyCom.UserOption1,
-    //     },
-    //     {
-    //       key: "/app/template/option3",
-    //       path: "/app/template/option3",
-    //       title: "模板列表",
-    //       component: MyCom.UserOption1,
-    //     },
-    //   ],
-    // },
+    {
+      key: "/app/media",
+      path: "/app/media",
+      title: "媒体管理",
+      icon: <VideoCameraOutlined />,
+      subs: [
+        {
+          key: "/app/media/video",
+          path: "/app/media/video",
+          title: "视频播放",
+          component: MyPage.VideoPlayerPage,
+        },
+      ],
+    },
     // {
     //   key: "/app/finance",
     //   path: "/app/finance",

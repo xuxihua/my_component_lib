@@ -6,6 +6,7 @@ import "./assets/style/global.less";
 import "./assets/style/index.less";
 import "./assets/style/antd/index.less";
 import "./assets/style/pages/index.less";
+import '../node_modules/video-react/dist/video-react.css';
 
 ReactDOM.render(<App />, document.getElementById("root") as HTMLElement);
 document.title = "组件库";
